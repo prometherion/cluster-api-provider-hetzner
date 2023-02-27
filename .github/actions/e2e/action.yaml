@@ -54,6 +54,11 @@ runs:
         metadata_flavor: ${{ env.metadata_flavor }}
         metadata_tags: ${{ env.metadata_tags }}
 
+    - name: Install go modules for test
+      shell: bash
+      run: |
+        cd test && GO111MODULE=on GOPROXY=https://proxy.golang.org go mod download
+
     - name: Prepull the pre-built image
       shell: bash
       run: docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${TAG}
