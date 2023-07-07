@@ -29,7 +29,7 @@ jobs:
       - name: Verify Starlark
         run: make verify-starlark
 
-      - uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
+      - uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8 # v3
         with:
           node-version: "18"
       - name: Install renovate
@@ -84,7 +84,7 @@ jobs:
             "2000": "XXL"
             }
       - name: Generate Labels
-        uses: actions/labeler@9fcb2c2f5584144ca754f8bfe8c6f81e77753375 # v4
+        uses: actions/labeler@0967ca812e7fdc8f5f71402a1b486d5bd061fe20 # v4
         with:
           configuration-path: .github/labeler.yaml
           repo-token: ${{ steps.generate-token.outputs.token }}
